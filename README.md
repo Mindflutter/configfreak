@@ -1,0 +1,4 @@
+ConfigFreak
+===========
+
+Various configuration files
