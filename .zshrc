@@ -16,6 +16,7 @@ ZSH_THEME="gentoo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+	colored-man-pages
 	fzf
 	kubectl
 	pip
@@ -36,7 +37,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export PATH="$HOME/.poetry/bin:$PATH"
 export EDITOR=micro
 
-alias k="kubectl"
 function iterm2_print_user_vars() {
   iterm2_set_user_var kubeconfig "$KUBECONFIG"
   iterm2_set_user_var kubens_current "$(kubens -c)"
