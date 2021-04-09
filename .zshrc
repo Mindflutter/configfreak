@@ -29,8 +29,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-export PROMPT="%B%F{green} [%n%F{blue}@%F{green}%m] %F{red}☭ %F{blue}[%(!.%1~.%~)] ${vcs_info_msg_0_}
-%F{red}> %{$reset_color%}%b"
+export PROMPT='%B%F{green} [%n%F{blue}@%F{green}%m] %F{red}☭ %F{blue}[%~] ${vcs_info_msg_0_}
+%F{red}> %{$reset_color%}%b'
 
 # User configuration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
