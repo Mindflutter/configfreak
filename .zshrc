@@ -52,3 +52,9 @@ setopt histfindnodups
 setopt histignorealldups
 export HISTSIZE=100000
 export HIST_STAMPS="%d/%m/%y %T"
+
+# Key bindings
+# deleting everything to the left of the cursor
+bindkey "^X\\x7f" backward-kill-line
+# redo
+bindkey "^X^_" redo
