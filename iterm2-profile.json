@@ -128,6 +128,11 @@
   "Custom Command" : "No",
   "Title Components" : 512,
   "Keyboard Map" : {
+    "0xf702-0x380000-0x7b" : {
+      "Label" : "",
+      "Action" : 2,
+      "Text" : ""
+    },
     "0xf712-0x40000" : {
       "Text" : "[28;5~",
       "Action" : 10
@@ -202,6 +207,11 @@
       "Text" : "[20;2~",
       "Action" : 10
     },
+    "0x2f-0x100000-0x2c" : {
+      "Label" : "",
+      "Action" : 12,
+      "Text" : "ranger\\n"
+    },
     "0xf705-0x40000" : {
       "Text" : "[1;5Q",
       "Action" : 10
@@ -210,10 +220,10 @@
       "Text" : "[1;6B",
       "Action" : 10
     },
-    "0x79-0x100000-0x10" : {
+    "0xf703-0x380000-0x7c" : {
       "Label" : "",
-      "Action" : 11,
-      "Text" : "0x18 0x1f"
+      "Action" : 0,
+      "Text" : ""
     },
     "0x32-0x40000" : {
       "Text" : "0x00",
@@ -222,6 +232,11 @@
     "0xf707-0x20000" : {
       "Text" : "[1;2S",
       "Action" : 10
+    },
+    "0x79-0x100000-0x10" : {
+      "Label" : "",
+      "Action" : 11,
+      "Text" : "0x18 0x1f"
     },
     "0xf703-0x240000" : {
       "Text" : "[1;5C",
