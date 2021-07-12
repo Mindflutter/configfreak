@@ -21,6 +21,7 @@ plugins=(
 	kubectl
 	pip
 	poetry
+	pylint
 	git
 	docker
 	docker-compose

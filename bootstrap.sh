@@ -2,7 +2,7 @@
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 
 # Install packages
-brew install git micro ranger openssl readline sqlite3 xz zlib fzf pyenv kubernetes-cli kubectx
+brew install git micro ranger tree openssl readline sqlite3 xz zlib fzf pyenv kubernetes-cli kubectx
 
 # Install latest stable python
 pyenv install-latest
