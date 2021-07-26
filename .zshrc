@@ -37,6 +37,7 @@ export PROMPT='%B%F{green} [%n%F{blue}@%F{green}%m] %F{red}☭ %F{blue}[%~] ${vc
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="$HOME/.poetry/bin:$PATH"
 export EDITOR=micro
+export PIP_DISABLE_PIP_VERSION_CHECK=1
 
 function iterm2_print_user_vars() {
   iterm2_set_user_var kubeconfig "$KUBECONFIG"
