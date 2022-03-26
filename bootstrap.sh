@@ -1,14 +1,16 @@
-# Install brew
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+# Install brew (requires sudo, might prompt for password)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/"$USER"/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install packages
 brew install git micro ranger tree htop openssl readline sqlite3 xz zlib fzf pyenv kubernetes-cli kubectx
 
 # Install latest stable python
-pyenv install-latest
+pyenv install $(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
 
 # Install OMZ and some of its features
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
