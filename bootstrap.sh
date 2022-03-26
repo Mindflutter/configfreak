@@ -6,8 +6,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Install packages
 brew install git micro ranger tree htop openssl readline sqlite3 xz zlib fzf pyenv kubernetes-cli kubectx
 
-# Install latest stable python
+# Install and set latest stable python
+# TODO: fix variable substitution
+# latest_python=$(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
 pyenv install $(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
+echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+eval "$(pyenv init --path)"
+pyenv global $(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
 
 # Install OMZ and some of its features
 /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -15,11 +20,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # Install poetry
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://install.python-poetry.org | python3 -
 mkdir "$ZSH_CUSTOM"/plugins/poetry
 poetry completions zsh > "$ZSH_CUSTOM"/plugins/poetry/_poetry
 
 # Copy configs
 cp .zshrc "$HOME"/.zshrc
+mkdir -p "$HOME"/.config/ranger/ "$HOME"/.config/micro/
 cp ranger/rc.conf "$HOME"/.config/ranger/rc.conf
 cp micro/settings.json "$HOME"/.config/micro/settings.json
