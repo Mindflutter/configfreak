@@ -1,4 +1,12 @@
 {
+    "ft:go": {
+        "tabstospaces": false
+    },
+    "autosave": 5,
+    "autosu": true,
     "colorscheme": "darcula",
-    "tabsize": 2
+    "rmtrailingws": true,
+    "savecursor": true,
+    "saveundo": true,
+    "tabstospaces": true
 }
