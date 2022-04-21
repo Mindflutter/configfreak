@@ -1,3 +1,14 @@
+# Homebrew completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
+fi
+
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -60,3 +71,6 @@ export HIST_STAMPS="%d/%m/%y %T"
 bindkey "^X\\x7f" backward-kill-line
 # redo
 bindkey "^X^_" redo
+
+# GO
+export GOPATH="${HOME}/Projects/go"
