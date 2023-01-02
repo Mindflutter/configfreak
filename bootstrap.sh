@@ -4,7 +4,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/"$USER"/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install packages
-brew install git micro ranger tree htop openssl readline sqlite3 xz zlib fzf pyenv kubernetes-cli kubectx fd rg zoxide
+brew install git micro ranger tree htop openssl readline sqlite3 xz zlib fzf pyenv kubernetes-cli kubectx fd rg zoxide coreutils
 
 # Install and set latest stable python
 # TODO: fix variable substitution

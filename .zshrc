@@ -1,13 +1,4 @@
-# Homebrew completion
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  autoload -Uz compinit
-  compinit
-fi
-
-# Zoxide
-eval "$(zoxide init zsh)"
+# zmodload zsh/zprof
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
@@ -27,12 +18,13 @@ ZSH_THEME="gentoo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    evalcache
 	colored-man-pages
 	fzf
 	kubectl
 	pip
 	poetry
-	pylint
+#	pylint
 	git
 	docker
 	docker-compose
@@ -46,7 +38,7 @@ export PROMPT='%B%F{green} [%n%F{blue}@%F{green}%m] %F{red}☭ %F{blue}[%~] ${vc
 
 # User configuration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=micro
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 
@@ -57,13 +49,16 @@ function iterm2_print_user_vars() {
 }
 
 # Load pyenv
-eval "$(pyenv init -)"
+_evalcache pyenv init -
+
+# Zoxide
+_evalcache zoxide init zsh
 
 # History
 setopt incappendhistory
 setopt histfindnodups
 setopt histignorealldups
-export HISTSIZE=100000
+export HISTSIZE=50000
 export HIST_STAMPS="%d/%m/%y %T"
 
 # Key bindings
@@ -72,5 +67,4 @@ bindkey "^X\\x7f" backward-kill-line
 # redo
 bindkey "^X^_" redo
 
-# GO
-export GOPATH="${HOME}/Projects/go"
+# zprof
