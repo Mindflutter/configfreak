@@ -1,8 +1,10 @@
+# Enables zsh debug / profiling
 # zmodload zsh/zprof
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
-
+# Fixes slow multiline paste
+export DISABLE_MAGIC_FUNCTIONS="true"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="gentoo"
 
@@ -31,6 +33,9 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )
+
+# Fixes completions for docker commands
+zstyle ':omz:plugins:docker' legacy-completion yes
 
 source $ZSH/oh-my-zsh.sh
 export PROMPT='%B%F{green} [%n%F{blue}@%F{green}%m] %F{red}☭ %F{blue}[%~] ${vcs_info_msg_0_}
@@ -67,4 +72,7 @@ bindkey "^X\\x7f" backward-kill-line
 # redo
 bindkey "^X^_" redo
 
-# zprof
+# pretty-print json output for curl
+function curljson() {
+    curl $@ | json_pp
+}

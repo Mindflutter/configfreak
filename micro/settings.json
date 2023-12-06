@@ -5,7 +5,6 @@
     "autosave": 5,
     "autosu": true,
     "colorscheme": "darcula",
-    "rmtrailingws": true,
     "savecursor": true,
     "saveundo": true,
     "tabstospaces": true
